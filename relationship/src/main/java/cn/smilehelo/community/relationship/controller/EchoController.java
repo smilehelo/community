@@ -1,4 +1,4 @@
-package com.smilehelo.community.relationship.controller;
+package cn.smilehelo.community.relationship.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,17 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
  * description:
  * @author: HeLO
  * version: V1.0
- * createDate: 2022-11-01 16:43
+ * createDate: 2022-11-13 16:30
  *
  * </pre>
  **/
-@RequestMapping("/")
 @RestController
+@RequestMapping(value = "/")
 public class EchoController {
 
-    @RequestMapping("/")
+    @RequestMapping(value = "/")
     public String echo() {
-        return "Hello world!";
+        return "hello community,hello relationship";
     }
-
 }

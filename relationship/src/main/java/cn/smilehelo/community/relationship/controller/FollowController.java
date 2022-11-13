@@ -1,4 +1,4 @@
-package com.smilehelo.community.relationship.controller;
+package cn.smilehelo.community.relationship.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,17 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * project: community
  * className：FollowController
- * description: 关注
+ * description:
  * @author: HeLO
  * version: V1.0
- * createDate: 2022-11-01 16:53
+ * createDate: 2022-11-13 16:40
  *
  * </pre>
  **/
 @RequestMapping("follow")
 @RestController
 public class FollowController {
-
 
 
 }
