@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: dev
+# 启动端口
+server:
+  port: 8080

@@ -1,4 +1,4 @@
-package cn.smilehelo.community.relationship;
+package n.smilehelo.community.realtion;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,18 +7,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * <pre>
  *
  * project: community
- * className：RelationshipApplication
+ * className：RelationApplication
  * description:
  * @author: HeLO
  * version: V1.0
- * createDate: 2022-11-13 16:36
+ * createDate: 2022-11-13 17:42
  *
  * </pre>
  **/
 @SpringBootApplication
-public class RelationshipApplication {
+public class RelationApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RelationshipApplication.class);
+        SpringApplication.run(RelationApplication.class);
     }
 }
