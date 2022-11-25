@@ -15,11 +15,12 @@
 
     <!-- 统一管理jar包版本 -->
     <properties>
-        <guava.version>16.0</guava.version>
+        <guava.version>30.0-android</guava.version>
         <lombok.version>1.18.24</lombok.version>
         <hutool.version>4.6.4</hutool.version>
         <slf4j.api.version>1.7.22</slf4j.api.version>
-        <logback.classic.version>1.2.3</logback.classic.version>
+        <logback.classic.version>1.2.9</logback.classic.version>
+        <fastjson.version>1.2.83</fastjson.version>
     </properties>
 
     <dependencies>
@@ -54,6 +55,12 @@
             <version>${logback.classic.version}</version>
         </dependency>
         <!-- =============== Logger END =============== -->
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
 
 
     </dependencies>
