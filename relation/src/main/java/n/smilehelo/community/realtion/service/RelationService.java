@@ -6,7 +6,9 @@ import cn.smilehelo.redisUtil.Redis;
 import n.smilehelo.community.realtion.common.FollowStatusEnum;
 import n.smilehelo.community.realtion.common.RedisKey;
 import n.smilehelo.community.realtion.exception.BizException;
+import n.smilehelo.community.realtion.po.BaseParams;
 import n.smilehelo.community.realtion.po.req.FollowParams;
+import n.smilehelo.community.realtion.po.resp.RelationCounter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +31,28 @@ public class RelationService {
 
     @Autowired
     private Redis redis;
+
+
+    /**
+     * 关系计数器
+     *
+     * @param params
+     * @return
+     */
+    public RelationCounter counter(BaseParams params) {
+        RelationCounter counter = new RelationCounter();
+        String userId = params.getUserId();
+        // 关注
+        String key = RedisKey.relationListKey(params.getAppTypeId(), FollowStatusEnum.FOLLOW.getStatus(), userId);
+        counter.setFollowCounter(redis.zcount(key, 0, -1).intValue());
+        // 粉丝
+        key = RedisKey.relationListKey(params.getAppTypeId(), FollowStatusEnum.FANS.getStatus(), userId);
+        counter.setFansCounter(redis.zcount(key, 0, -1).intValue());
+        // 好友
+        key = RedisKey.relationListKey(params.getAppTypeId(), FollowStatusEnum.FRIEND.getStatus(), userId);
+        counter.setFriendCounter(redis.zcount(key, 0, -1).intValue());
+        return counter;
+    }
 
 
     /**

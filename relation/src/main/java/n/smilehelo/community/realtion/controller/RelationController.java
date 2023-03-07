@@ -1,6 +1,7 @@
 package n.smilehelo.community.realtion.controller;
 
 import n.smilehelo.community.realtion.common.FollowStatusEnum;
+import n.smilehelo.community.realtion.po.BaseParams;
 import n.smilehelo.community.realtion.po.Resp;
 import n.smilehelo.community.realtion.po.req.FollowParams;
 import n.smilehelo.community.realtion.service.RelationService;
@@ -28,6 +29,16 @@ public class RelationController {
     @Autowired
     private RelationService service;
 
+    /**
+     * 关系计数器
+     *
+     * @param params
+     * @return
+     */
+    @RequestMapping("counter")
+    public Resp counter(@RequestBody BaseParams params) {
+        return Resp.success(service.counter(params));
+    }
 
     /**
      * 关系查询
@@ -42,7 +53,7 @@ public class RelationController {
 
 
     /**
-     * 关系列表
+     * 关注列表
      *
      * @param params
      * @return
